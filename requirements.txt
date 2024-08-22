@@ -1,0 +1,4 @@
+django
+ollama
+psycopg2-binary
+requests
