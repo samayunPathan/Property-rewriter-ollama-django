@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class Location(models.Model):
     LOCATION_TYPES = [
@@ -18,16 +17,17 @@ class Location(models.Model):
     class Meta:
         unique_together = ['name', 'type']
         verbose_name_plural = "Locations"
-        managed = False  # Tell Django this table already exists
-        db_table = 'properties_location'  # Specify the actual table name
+        managed = False
+        db_table = 'properties_location'
 
     def __str__(self):
         return f"{self.get_type_display()}: {self.name}"
 
+
 class Amenity(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    created_at = models.DateTimeField(auto_now_add=True)  
-    updated_at = models.DateTimeField(auto_now=True)      
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name_plural = "Amenities"
@@ -36,6 +36,7 @@ class Amenity(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Property(models.Model):
     property_id = models.IntegerField(primary_key=True)
@@ -49,11 +50,10 @@ class Property(models.Model):
     class Meta:
         verbose_name_plural = "Properties"
         managed = False
-        db_table = 'properties_property'  # Make sure this matches your actual table name
+        db_table = 'properties_property'
 
     def __str__(self):
-        return f"{self.title}"
-
+        return self.title
 
 
 class PropertySummary(models.Model):
