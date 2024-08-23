@@ -24,7 +24,7 @@ Before running the project, make sure you have the following installed:
 ### 2. Clone the Repository
 
 ```bash
-https://github.com/samayunPathan/Property-rewriter-ollama-django.git
+git clone https://github.com/samayunPathan/Property-rewriter-ollama-django.git
 ```
 Go to project directory
 ``` bash
@@ -86,7 +86,7 @@ Access the Django admin panel at http://127.0.0.1:8000/admin/ and log in with yo
 
 ### 9. Migrate Data from Scrapy
 ```bash
-python manage.py migrate_scrapy_data
+python manage.py rewriter
 ```
 
 ## Usage
