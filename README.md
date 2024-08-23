@@ -50,7 +50,7 @@ pip install -r requirements.txt
 > Create `.pg_service.conf` file in your ** home directory with the following content:
 
 ```bash
-[django_model_db]
+[django_db]
 host=localhost
 port=5432
 dbname=scrapy_db
@@ -63,7 +63,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-            'service': 'scrapy_db',
+            'service': 'django_db',
         },
     }
 }
@@ -84,7 +84,7 @@ python manage.py runserver
 ```
 Access the Django admin panel at http://127.0.0.1:8000/admin/ and log in with your superuser credentials.
 
-### 9. Migrate Data from Scrapy
+### 9. RUN CLI Application for Rewriting Property
 ```bash
 python manage.py rewriter
 ```
