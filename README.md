@@ -11,7 +11,6 @@
    - [Install Dependencies](#install-dependencies)
 5. [Configuration](#configuration)
    - [Configure PostgreSQL](#configure-postgresql)
-   - [Update Django Settings](#update-django-settings)
 6. [Database Setup](#database-setup)
    - [Apply Migrations](#apply-migrations)
    - [Create Superuser](#create-superuser)
@@ -70,28 +69,15 @@ pip install -r requirements.txt
 ### Configure PostgreSQL
 
 > [!NOTE]
-> Create `.pg_service.conf` file in your **home directory with the following 
+> Create `.env` file in your project directory with the following ,to clear understand this repo has `.env.sample` file
 ``` bash
-[django_db]
-
 host=localhost
 port=port number
 user=your_user_name
 dbname=your_db_name
 password=your_db_password
 ```
-### Update Django Settings
-Update the settings.py file to use the PostgreSQL service:
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'service': 'django_db',
-        },
-    }
-}
-```
+
 ## Database Setup
 ### Apply Migrations
 ```bash
