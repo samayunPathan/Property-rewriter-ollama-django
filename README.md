@@ -68,8 +68,8 @@ pip install -r requirements.txt
 ```
 ## Configuration
 ### Configure PostgreSQL
-> [!NOTE]
 
+> [!NOTE]
 > Create `.pg_service.conf` file in your **home directory with the following 
 ``` bash
 [django_db]
